@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: transparent; font-family: Archivo, "Helvetica Neue", Helvetica, sans-serif; }
+    a { color: #e4573d; text-decoration: none; }
+    a:hover { color: #f2765f; }
+
+    .band { animation: band var(--dur) linear infinite both; }
+    .sweep { position: absolute; inset: 0; background: var(--accent); z-index: 3; animation: sweep var(--dur) cubic-bezier(0.65, 0, 0.35, 1) infinite both; }
+
+    .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.19em; text-transform: uppercase; color: #8d877d; }
+    .chip { display: flex; align-items: center; gap: 12px; color: #f6f4f0; }
+    .chip-label { font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: inherit; }
+    .divider { width: 1px; height: 104px; background: #33302c; transform-origin: center; }
+
+    .an-text { animation: fade-up var(--dur) ease-out infinite both; }
+    .an-rule { animation: rule-in var(--dur) ease-out infinite both; }
+    .an-div-1 { animation: div-in-1 var(--dur) ease-out infinite both; }
+    .an-div-2 { animation: div-in-2 var(--dur) ease-out infinite both; }
+    .an-ig { animation: ig-in var(--dur) ease-out infinite both; }
+
+    .chip-1 { animation: chip-1 var(--dur) ease-out infinite both; }
+    .chip-2 { animation: chip-2 var(--dur) ease-out infinite both; }
+    .chip-3 { animation: chip-3 var(--dur) ease-out infinite both; }
+
+    .beat-1 { animation: pulse var(--dur) ease-in-out infinite both; }
+    .beat-2 { animation: ring var(--dur) ease-in-out infinite both; }
+    .beat-3 { animation: pop var(--dur) ease-in-out infinite both; }
+
+    @keyframes band {
+      0%   { opacity: 0; transform: translateX(-36px); }
+      5%   { opacity: 1; transform: translateX(0); }
+      91%  { opacity: 1; transform: translateX(0); }
+      95%  { opacity: 0; transform: translateX(28px); }
+      100% { opacity: 0; transform: translateX(-36px); }
+    }
+    @keyframes sweep {
+      0%   { transform: translateX(-101%); }
+      2%   { transform: translateX(-101%); }
+      7%   { transform: translateX(0%); }
+      12%  { transform: translateX(101%); }
+      86%  { transform: translateX(101%); }
+      91%  { transform: translateX(0%); }
+      96%  { transform: translateX(-101%); }
+      100% { transform: translateX(-101%); }
+    }
+    @keyframes fade-up {
+      0%, 7.5% { opacity: 0; transform: translateY(10px); }
+      9.5%     { opacity: 1; transform: translateY(0); }
+      89%      { opacity: 1; transform: translateY(0); }
+      91%      { opacity: 0; transform: translateY(0); }
+      100%     { opacity: 0; transform: translateY(10px); }
+    }
+    @keyframes rule-in {
+      0%, 8.5% { transform: scaleX(0); }
+      11%      { transform: scaleX(1); }
+      89%      { transform: scaleX(1); }
+      91%      { transform: scaleX(0); }
+      100%     { transform: scaleX(0); }
+    }
+    @keyframes div-in-1 {
+      0%, 8%  { opacity: 0; transform: scaleY(0.2); }
+      10.5%   { opacity: 1; transform: scaleY(1); }
+      89%     { opacity: 1; transform: scaleY(1); }
+      91%     { opacity: 0; transform: scaleY(1); }
+      100%    { opacity: 0; transform: scaleY(0.2); }
+    }
+    @keyframes div-in-2 {
+      0%, 10%  { opacity: 0; transform: scaleY(0.2); }
+      12.5%    { opacity: 1; transform: scaleY(1); }
+      89%      { opacity: 1; transform: scaleY(1); }
+      91%      { opacity: 0; transform: scaleY(1); }
+      100%     { opacity: 0; transform: scaleY(0.2); }
+    }
+    @keyframes ig-in {
+      0%, 11%  { opacity: 0; transform: translateX(18px); }
+      13.5%    { opacity: 1; transform: translateX(0); }
+      89%      { opacity: 1; transform: translateX(0); }
+      91%      { opacity: 0; transform: translateX(0); }
+      100%     { opacity: 0; transform: translateX(18px); }
+    }
+
+    @keyframes chip-1 {
+      0%, 8.5% { opacity: 0; transform: translateY(12px); color: #f6f4f0; }
+      11%      { opacity: 1; transform: translateY(0); color: #f6f4f0; }
+      30%      { color: #f6f4f0; }
+      33%      { color: var(--accent); }
+      37%      { color: var(--accent); }
+      40%      { color: #f6f4f0; }
+      89%      { opacity: 1; transform: translateY(0); color: #f6f4f0; }
+      91%      { opacity: 0; }
+      100%     { opacity: 0; transform: translateY(12px); }
+    }
+    @keyframes chip-2 {
+      0%, 9.2% { opacity: 0; transform: translateY(12px); color: #f6f4f0; }
+      11.7%    { opacity: 1; transform: translateY(0); color: #f6f4f0; }
+      42%      { color: #f6f4f0; }
+      45%      { color: var(--accent); }
+      52%      { color: var(--accent); }
+      55%      { color: #f6f4f0; }
+      89%      { opacity: 1; transform: translateY(0); color: #f6f4f0; }
+      91%      { opacity: 0; }
+      100%     { opacity: 0; transform: translateY(12px); }
+    }
+    @keyframes chip-3 {
+      0%, 9.9% { opacity: 0; transform: translateY(12px); color: #f6f4f0; }
+      12.4%    { opacity: 1; transform: translateY(0); color: #f6f4f0; }
+      56%      { color: #f6f4f0; }
+      59%      { color: var(--accent); }
+      65%      { color: var(--accent); }
+      68%      { color: #f6f4f0; }
+      89%      { opacity: 1; transform: translateY(0); color: #f6f4f0; }
+      91%      { opacity: 0; }
+      100%     { opacity: 0; transform: translateY(12px); }
+    }
+
+    @keyframes pulse {
+      0%, 31%  { transform: scale(1); }
+      34%      { transform: scale(1.22); }
+      36%      { transform: scale(0.96); }
+      38%      { transform: scale(1); }
+      100%     { transform: scale(1); }
+    }
+    @keyframes ring {
+      0%, 43%  { transform: rotate(0deg); }
+      45%      { transform: rotate(-15deg); }
+      47%      { transform: rotate(13deg); }
+      49%      { transform: rotate(-9deg); }
+      51%      { transform: rotate(6deg); }
+      53%      { transform: rotate(0deg); }
+      100%     { transform: rotate(0deg); }
+    }
+    @keyframes pop {
+      0%, 57%  { transform: scale(1) rotate(0deg); }
+      60%      { transform: scale(1.28) rotate(-10deg); }
+      63%      { transform: scale(0.94) rotate(3deg); }
+      66%      { transform: scale(1) rotate(0deg); }
+      100%     { transform: scale(1) rotate(0deg); }
+    }
+  </style>
+</helmet>
+
+<div id="cta-c-motion" class="band" style="--accent: {{accent}}; --dur: {{dur}}s; position: relative; overflow: hidden; width: 1400px; height: 240px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; background: #121110; border-radius: 3px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);">
+
+  <div class="sweep"></div>
+
+  <div data-anim="text-block" class="an-text" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+    <div class="eyebrow">Curtiu o vídeo?</div>
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 48px; line-height: 1; color: #f6f4f0; letter-spacing: -0.01em; white-space: nowrap;">Inscreva-se</div>
+    <div class="an-rule" style="width: 44px; height: 3px; background: {{accent}}; transform-origin: left center;"></div>
+  </div>
+
+  <div class="divider an-div-1"></div>
+
+  <div data-anim="actions" style="display: flex; align-items: center; gap: 40px;">
+
+    <div class="chip chip-1" data-anim="subscribe">
+      <svg class="beat-1" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+        <path d="m9 8 6 4-6 4Z"></path>
+      </svg>
+      <div class="chip-label">Inscrever</div>
+    </div>
+
+    <div class="chip chip-2" data-anim="bell">
+      <svg class="beat-2" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="transform-origin: 50% 22%;">
+        <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+        <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
+      </svg>
+      <div class="chip-label">Sininho</div>
+    </div>
+
+    <div class="chip chip-3" data-anim="like">
+      <svg class="beat-3" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="transform-origin: 30% 70%;">
+        <path d="M7 10v12"></path>
+        <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"></path>
+      </svg>
+      <div class="chip-label">Like</div>
+    </div>
+
+  </div>
+
+  <div class="divider an-div-2"></div>
+
+  <div data-anim="instagram" class="an-ig" style="display: flex; align-items: center; gap: 12px;">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path>
+    </svg>
+    <div style="font-size: 24px; font-weight: 500; color: #f6f4f0; letter-spacing: -0.01em; white-space: nowrap;">@[SEU_INSTAGRAM]</div>
+  </div>
+
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#e4573d","options":["#e4573d","#f6f4f0","#4fae94","#d8ab4a"]},"dur":{"editor":"range","default":7,"min":4,"max":12,"step":0.5,"unit":"s","section":"Motion"},"$preview":{"width":1400,"height":240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#e4573d',
+      dur: this.props.dur ?? 7
+    };
+  }
+}
+</script>
+</body>
+</html>

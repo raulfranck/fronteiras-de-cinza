@@ -1,0 +1,31 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Motion" },
+    { "id": "page-2", "name": "Estáticos" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html", "title": "C — Faixa larga (motion)", "page": "page-1", "x": 0, "y": 0, "w": 1400, "h": 240 },
+    { "file": "Faixa.dc.html", "title": "C — Faixa larga (estático)", "page": "page-2", "x": 0, "y": 0, "w": 1400, "h": 240 },
+    { "file": "Barra.dc.html", "title": "A — Barra lower-third", "page": "page-2", "x": 0, "y": 420, "w": 1200, "h": 300 },
+    { "file": "Coluna.dc.html", "title": "B — Coluna lateral", "page": "page-2", "x": 1560, "y": 0, "w": 520, "h": 760 }
+  ],
+  "annotations": [
+    {
+      "id": "nota-timing",
+      "page": "page-1",
+      "x": 0,
+      "y": -320,
+      "w": 560,
+      "text": "Loop de 7s (o controle Motion vai de 4s a 12s).\n\n0,00–0,35s  faixa entra pela esquerda\n0,14–0,84s  barra de acento varre a faixa\n0,53–0,95s  título, filete, chips e @ entram em stagger\n2,17–2,66s  pulso do Inscrever\n3,01–3,71s  sino balança\n3,99–4,62s  like estoura\n6,02–6,72s  varredura de saída\n\nO @ ainda está como @[SEU_INSTAGRAM] — me passe o seu que eu troco."
+    },
+    {
+      "id": "nota-uso",
+      "page": "page-2",
+      "x": 0,
+      "y": -190,
+      "w": 560,
+      "text": "As três estáticas originais. Cada bloco tem um marcador data-anim (text-block, subscribe, bell, like, instagram) para animar cada parte separadamente."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

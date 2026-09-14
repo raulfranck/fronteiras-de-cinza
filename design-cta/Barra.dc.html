@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: transparent; font-family: Archivo, "Helvetica Neue", Helvetica, sans-serif; }
+    a { color: #c4432d; text-decoration: none; }
+    a:hover { color: #98301e; }
+    .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.19em; text-transform: uppercase; color: #7d786f; }
+    .label { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #7d786f; }
+  </style>
+</helmet>
+
+<div id="cta-a" style="width: 1200px; height: 300px; box-sizing: border-box; display: flex; align-items: center; padding: 46px 52px; background: #f6f4f0; border-radius: 3px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);">
+
+  <div data-anim="text-block" style="display: flex; flex-direction: column; align-items: flex-start; gap: 14px; flex-grow: 1;">
+    <div class="eyebrow">Se este vídeo te ajudou</div>
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 64px; line-height: 0.94; color: #151413; letter-spacing: -0.01em; white-space: nowrap;">Inscreva-se</div>
+    <div style="width: 52px; height: 3px; background: {{accent}};"></div>
+  </div>
+
+  <div style="width: 1px; height: 152px; background: #e2ddd3; margin: 0 36px;"></div>
+
+  <div data-anim="actions" style="display: flex; align-items: flex-start; gap: 34px;">
+
+    <div data-anim="subscribe" style="display: flex; flex-direction: column; align-items: center; gap: 12px; width: 80px; color: #151413;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+        <path d="m9 8 6 4-6 4Z"></path>
+      </svg>
+      <div class="label">Inscrever</div>
+    </div>
+
+    <div data-anim="bell" style="display: flex; flex-direction: column; align-items: center; gap: 12px; width: 80px; color: #151413;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+        <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
+      </svg>
+      <div class="label">Sininho</div>
+    </div>
+
+    <div data-anim="like" style="display: flex; flex-direction: column; align-items: center; gap: 12px; width: 80px; color: #151413;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 10v12"></path>
+        <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"></path>
+      </svg>
+      <div class="label">Like</div>
+    </div>
+
+  </div>
+
+  <div style="width: 1px; height: 152px; background: #e2ddd3; margin: 0 36px;"></div>
+
+  <div data-anim="instagram" style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
+    <div class="label">No Instagram</div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path>
+      </svg>
+      <div style="font-size: 22px; font-weight: 500; color: #151413; letter-spacing: -0.01em;">@[SEU_INSTAGRAM]</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#c4432d","options":["#c4432d","#151413","#2f6f5e","#b4842f"]},"$preview":{"width":1200,"height":300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#c4432d' };
+  }
+}
+</script>
+</body>
+</html>
